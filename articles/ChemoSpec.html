@@ -141,7 +141,7 @@ Figure 1: A typical workflow. For a given data set, some steps may be omitted an
   <span class="kw">int.unit</span> <span class="kw">=</span> <span class="st">"peak intensity"</span>,
   <span class="kw">descrip</span> <span class="kw">=</span> <span class="st">"Subspecies Study"</span>,
   <span class="kw">out.file</span> <span class="kw">=</span> <span class="st">"subsp"</span>)</pre></body></html></div>
-<p>This causes <code>files2SpectraObject</code> to inspect the file names for the strings <code>"sspA"</code> and <code>"sspB"</code> and use these to assign the samples into groups. Samples in <code>sspA*.csv</code> files will be assigned the color red and <code>sspB*.csv</code> will be assigned blue (see Section <a href="#sec:colsym"><strong>??</strong></a> for some suggestions about planning ahead on color choices, as well as <code><a href="../reference/colorSymbol.html">?colorSymbol</a></code>). After running this command, a new file called <code>subsp.RData</code> will be in your directory, and and a <code>Spectra</code> object called <code>ssp</code> will be in your workspace read for exploration. At a later date, you don’t have to re-import your data, you can use the saved version and give it whatever name you like as follows (function <code>loadObject</code> is from package <code>R.utils</code>):</p>
+<p>This causes <code>files2SpectraObject</code> to inspect the file names for the strings <code>"sspA"</code> and <code>"sspB"</code> and use these to assign the samples into groups. Samples in <code>sspA*.csv</code> files will be assigned the color red and <code>sspB*.csv</code> will be assigned blue (see Section <a href="#sec:colsymsec"><strong>??</strong></a> for some suggestions about planning ahead on color choices, as well as <code><a href="../reference/colorSymbol.html">?colorSymbol</a></code>). After running this command, a new file called <code>subsp.RData</code> will be in your directory, and and a <code>Spectra</code> object called <code>ssp</code> will be in your workspace read for exploration. At a later date, you don’t have to re-import your data, you can use the saved version and give it whatever name you like as follows (function <code>loadObject</code> is from package <code>R.utils</code>):</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">SubspeciesNMR</span> <span class="kw">&lt;-</span> <span class="fu">loadObject</span>(<span class="st">"subsp.RData"</span>)</pre></body></html></div>
 <p>Now it is ready to use.</p>
 <div id="working-with-chromatograms" class="section level2">
@@ -864,9 +864,9 @@ Figure 28: Comparing mclust results to the TRUTH.
 <code>plotSpectraDist</code>: Plot the distance between each spectrum and a reference spectrum.</li>
 </ul>
 </div>
-<div id="sec:colsym" class="section level2">
+<div id="sec:colsymsec" class="section level2">
 <h2 class="hasAnchor">
-<a href="#sec:colsym" class="anchor"></a>Color and Symbol Options</h2>
+<a href="#sec:colsymsec" class="anchor"></a>Color and Symbol Options</h2>
 <p>In <code>ChemoSpec</code>, the user may use any color name/format known to <code>R</code>. When importing data, <code>ChemoSpec</code> will choose colors for you automatically if desired. However, depending upon your needs, you may wish to choose colors yourself. the current color scheme of a <code>Spectra</code> object may be determined using <code>sumSpectra</code> or changed using <code>conColScheme</code>. A fuller discussion of color issues can be found in <code><a href="../reference/colorSymbol.html">?colorSymbol</a></code>.</p>
 <p>In addition to colors, <code>Spectra</code> objects also contain a list of symbols, and alternative symbols. These are useful for plotting in black and white, or when color-blind individuals will be viewing the plots. The alternative symbols are simply lower-case letters, as these are needed for <code>plotScoresRGL</code>, and other rgl-graphics driven functions which cannot plot traditional symbols. Figure <a href="#fig:colsym">29</a> shows some of the built in options, but as stated above, you can choose whatever you like.</p>
 <div class="figure" style="text-align: center">
